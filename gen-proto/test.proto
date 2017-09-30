@@ -1,0 +1,20 @@
+package game_world;
+
+// 账号登陆验证成功后发送到游戏逻辑验证
+message C2G_Login [COM_GAME_WORLD] {
+	string token = 1;
+	binary msgmd5 = 2;
+	uint32 scrWidth = 3;
+	uint32 scrHeight = 4;
+	int32 cannonX = 5;
+	int32 cannonY = 6;
+}
+
+message C2S_GmCmd [COM_GAME_WORLD] {
+	string cmd = 0;
+}
+
+message S2C_LG_SynPlayerZhuang [COM_GAME_WORLD] {
+	uint64 state = 0;
+	int32 cnt = 1;
+}
